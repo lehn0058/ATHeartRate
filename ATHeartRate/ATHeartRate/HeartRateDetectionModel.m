@@ -8,7 +8,6 @@
 
 #import "HeartRateDetectionModel.h"
 #import <AVFoundation/AVFoundation.h>
-#import <LinqToObjectiveC/NSArray+LinqExtensions.h>
 
 const int FRAMES_PER_SECOND = 30;
 const int SECONDS = 30;
@@ -289,9 +288,7 @@ const int SECONDS = 30;
                                 inputData[i],
                                 inputData[i+1],
                                 inputData[i+2],
-                                ] sort:^id(NSNumber *item) {
-                                    return item;
-                                }];
+                                ] sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"self" ascending:YES]]];
             
             [newData addObject:items[2]];
         }
