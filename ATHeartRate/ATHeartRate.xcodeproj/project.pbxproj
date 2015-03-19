@@ -15,6 +15,7 @@
 		CA30D7221AB7B8D80091536E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA30D7201AB7B8D80091536E /* LaunchScreen.xib */; };
 		CA30D72E1AB7B8D90091536E /* ATHeartRateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA30D72D1AB7B8D90091536E /* ATHeartRateTests.m */; };
 		CA30D7391AB7B8FC0091536E /* HeartRateDetectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CA30D7381AB7B8FC0091536E /* HeartRateDetectionModel.m */; };
+		CA30D73B1ABAEA200091536E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA30D73A1ABAEA200091536E /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		CA30D72D1AB7B8D90091536E /* ATHeartRateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATHeartRateTests.m; sourceTree = "<group>"; };
 		CA30D7371AB7B8FC0091536E /* HeartRateDetectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeartRateDetectionModel.h; sourceTree = "<group>"; };
 		CA30D7381AB7B8FC0091536E /* HeartRateDetectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeartRateDetectionModel.m; sourceTree = "<group>"; };
+		CA30D73A1ABAEA200091536E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA30D73B1ABAEA200091536E /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +69,7 @@
 		CA30D7051AB7B8D80091536E = {
 			isa = PBXGroup;
 			children = (
+				CA30D73A1ABAEA200091536E /* AVFoundation.framework */,
 				CA30D7101AB7B8D80091536E /* ATHeartRate */,
 				CA30D72A1AB7B8D90091536E /* ATHeartRateTests */,
 				CA30D70F1AB7B8D80091536E /* Products */,
@@ -420,6 +424,7 @@
 				CA30D7331AB7B8D90091536E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CA30D7341AB7B8D90091536E /* Build configuration list for PBXNativeTarget "ATHeartRateTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +433,7 @@
 				CA30D7361AB7B8D90091536E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

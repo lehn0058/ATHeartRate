@@ -21,21 +21,11 @@ const int SECONDS = 30;
 
 @implementation HeartRateDetectionModel
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self)
-    {
-        self.dataPointsHue = [[NSMutableArray alloc] init];
-    }
-    
-    return self;
-}
-
 #pragma mark - Data collection
 
 - (void)startDetection
 {
+    self.dataPointsHue = [[NSMutableArray alloc] init];
     self.session = [[AVCaptureSession alloc] init];
     self.session.sessionPreset = AVCaptureSessionPresetLow;
     
@@ -104,6 +94,13 @@ const int SECONDS = 30;
     
     // Start the video session
     [self.session startRunning];
+    
+    if (self.delegate)
+    {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.delegate heartRateStart];
+        });
+    }
 }
 
 - (void)stopDetection
@@ -147,7 +144,7 @@ const int SECONDS = 30;
             b+=buf[x];
             g+=buf[x+1];
             r+=buf[x+2];
-            //          a+=buf[x+3];
+            // a+=buf[x+3];
         }
         buf+=bprow;
     }
@@ -266,6 +263,9 @@ const int SECONDS = 30;
     return count;
 }
 
+// Smoothed data helps remove outliers that may be caused by interference, finger movement or pressure changes.
+// This will only help with small interference changes.
+// This also helps keep the data more consistent.
 - (NSArray *)medianSmoothing:(NSArray *)inputData
 {
     NSMutableArray *newData = [[NSMutableArray alloc] init];
